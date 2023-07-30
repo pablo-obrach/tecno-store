@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tecno-Store tu lugar para comprar productos tecnologicos de calidad ">
+  <meta name="keywords"
+    content="tecnologia,ordenadores,procesadores,pantallas,PC,teclados,placas de video,cooler,joystick,mouse,auriculares,cascos,">
+  <link rel="shortcut icon" href="./IMG/TS-Icon-header.png" type="image/x-icon">
+  <link rel="stylesheet" href="./CSS/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Tecno-Store</title>
+</head>
+
+<body>
+  <header class="header">
+
+    <div class="header__container">
+      <div class="header__title__logo">
+        <a href="#" class="header__link__main"><img src="./IMG/TS-Icon-header.png" alt="" class="header__logo"></a>
+        <p class="header__title">Tecno-Store</p>
+      </div>
+      <!-- nav bar -->
+      <nav class="nav">
+        <ul class="nav__list">
+          <a href="" class="nav__list__links">
+            <li class="nav__list__link">Productos</li>
+          </a>
+          <a href="" class="nav__list__links">
+            <li class="nav__list__link">Sobre Nosotros</li>
+          </a>
+        </ul>
+      </nav>
+    </div>
+
+    <!--CONTENEDOR CARRITO-->
+    <div class="cart__container">
+      <div id="cart" class="cart__container__logo">
+        <i class="fa-solid fa-cart-shopping fa-2xl" style="color: #fff; "><span id="cantidadCarrito"
+            class="cantidad__carrito"></span></i>
+      </div>
+    </div>
+    <!-- Contenido del Modal-->
+    <div id="modal-container" class="modal__container__products-disable"></div>
+    </div>
+  </header>
+
+  <main class="main">
+    <!--BANNER-->
+    <div class="banner">
+      <div class="banner__container">
+        <h1 class="banner__container_title">Tecno-Store</h1>
+        <p class="banner__container_subtitle">"Tu lugar para comprar lo mejor en Tecnologia"</p>
+      </div>
+    </div>
+
+    <!--contenido de la tienda-->
+    <div class="shop__content__container">
+      <div class="filter__container">
+        <ul class="filter__container__ul">
+          <h3 class="filter__container__ul__title">Menu</h3>
+          <li class="filter__container__ul__filters" id="todos">Todos</li>
+          <li class="filter__container__ul__filters" id="laptops">Laptops</li>
+          <li class="filter__container__ul__filters" id="torres">Torres</li>
+          <li class="filter__container__ul__filters" id="monitores">Monitores</li>
+          <li class="filter__container__ul__filters" id="procesadores">Procesadores</li>
+          <li class="filter__container__ul__filters" id="coolers">Coolers</li>
+          <li class="filter__container__ul__filters" id="teclados">Teclados</li>
+          <li class="filter__container__ul__filters" id="mouse">Mouse</li>
+        </ul>
+      </div>
+      <div id="shop-content" class="shop__content"></div>
+    </div>
+
+  </main>
+
+
+  <footer class="footer">
+
+  </footer>
+  <script src="./JS/products.js"></script>
+  <script src="./JS/app.js"></script>
+  <script src="./JS/carrito.js"></script>
+
+</body>
+
+</html>

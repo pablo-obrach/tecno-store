@@ -1,0 +1,246 @@
+const productos = [
+  {
+    id: 1,
+    nombre: "Asus HD",
+    precio: 150000,
+    type: "laptop",
+    img: "IMG/laptops/Asus-Laptop.png",
+  },
+
+  {
+    id: 2,
+    nombre: "Asus PRO",
+    precio: 250000,
+    type: "laptop",
+    img: "IMG/laptops/Asus-Laptop2.png",
+  },
+
+  {
+    id: 3,
+    nombre: "Asus Gaming",
+    precio: 300000,
+    type: "laptop",
+    img: "IMG/laptops/asus-laptop-gaming.png",
+  },
+
+  {
+    id: 4,
+    nombre: "Lenovo ThinkPad s450",
+    precio: 200000,
+    type: "laptop",
+    img: "IMG/laptops/Lenovo-Laptop.png",
+  },
+
+  {
+    id: 5,
+    nombre: "Monitor led LG 14' ",
+    precio: 100000,
+    type: "monitor",
+    img: "IMG/monitores/monitor-led-lg.png",
+  },
+
+  {
+    id: 6,
+    nombre: "Monitor led LG WideScreen ",
+    precio: 150000,
+    type: "monitor",
+    img: "IMG/monitores/monitor-led-lg-wide.png",
+  },
+
+  {
+    id: 7,
+    nombre: "Monitor led LG WideScreen HD ",
+    precio: 150000,
+    type: "monitor",
+    img: "IMG/monitores/monitor-led-lg-wide2.png",
+  },
+
+  {
+    id: 8,
+    nombre: "Monitor led Samsung 20' ",
+    precio: 150000,
+    type: "monitor",
+    img: "IMG/monitores/monito-led-samsung.png",
+  },
+
+  {
+    id: 9,
+    nombre: "Procesador Intel I5",
+    precio: 40000,
+    type: "procesador",
+    img: "IMG/procesadores/intel-I5.png",
+  },
+
+  {
+    id: 10,
+    nombre: "Procesador Intel I7",
+    precio: 60000,
+    type: "procesador",
+    img: "IMG/procesadores/intel-I7.png",
+  },
+
+  {
+    id: 11,
+    nombre: "Procesador Intel I9",
+    precio: 80000,
+    type: "procesador",
+    img: "IMG/procesadores/intel-I9.png",
+  },
+
+  {
+    id: 12,
+    nombre: "Procesador Ryzen-5",
+    precio: 30000,
+    type: "procesador",
+    img: "IMG/procesadores/ryzen-5.png",
+  },
+
+  {
+    id: 13,
+    nombre: "Procesador Ryzen-7",
+    precio: 50000,
+    type: "procesador",
+    img: "IMG/procesadores/ryzen-7.png",
+  },
+
+  {
+    id: 14,
+    nombre: "Procesador Ryzen-9",
+    precio: 70000,
+    type: "procesador",
+    img: "IMG/procesadores/ryzen-9.png",
+  },
+
+  {
+    id: 15,
+    nombre: "Torre Red-Dragon RGB Alta",
+    precio: 20000,
+    type: "torre",
+    img: "IMG/torres/torre-reddragon-alta.png",
+  },
+
+  {
+    id: 16,
+    nombre: "Torre Red-Dragon RGB Cool",
+    precio: 30000,
+    type: "torre",
+    img: "IMG/torres/torre-reddragon-cool.png",
+  },
+
+  {
+    id: 17,
+    nombre: "Torre Red-Dragon No-RGB",
+    precio: 15000,
+    type: "torre",
+    img: "IMG/torres/torre-reddragon-no-rgb.png",
+  },
+
+  {
+    id: 18,
+    nombre: "Torre Red-Dragon RGB Master",
+    precio: 40000,
+    type: "torre",
+    img: "IMG/torres/torre-reddragon-rgb.png",
+  },
+
+  {
+    id: 19,
+    nombre: "Cooler RGB Insanity",
+    precio: 20000,
+    type: "cooler",
+    img: "IMG/coolers/cooler-rgb.png",
+  },
+
+  {
+    id: 20,
+    nombre: "Cooler Corsair Cooler-Way",
+    precio: 40000,
+    type: "cooler",
+    img: "IMG/coolers/corsair-cooler.png",
+  },
+
+  {
+    id: 21,
+    nombre: "Cooler Hyper 212",
+    precio: 35000,
+    type: "cooler",
+    img: "IMG/coolers/hyper-212.png",
+  },
+
+  {
+    id: 22,
+    nombre: "Cooler Reeven AlphaTrend",
+    precio: 30000,
+    type: "cooler",
+    img: "IMG/coolers/reeven-cooler.png",
+  },
+
+  {
+    id: 23,
+    nombre: "Teclado Mecanico Red-Dragon Born",
+    precio: 20000,
+    type: "teclado",
+    img: "IMG/teclados/teclado-DRAGONBORN.png",
+  },
+
+  {
+    id: 24,
+    nombre: "Teclado Mecanico Red-Dragon RGB White",
+    precio: 30000,
+    type: "teclado",
+    img: "IMG/teclados/teclado-reddragon.png",
+  },
+
+  {
+    id: 25,
+    nombre: "Teclado Mecanico Red-Dragon DITI",
+    precio: 50000,
+    type: "teclado",
+    img: "IMG/teclados/teclado-reddragon-DITI.png",
+  },
+
+  {
+    id: 26,
+    nombre: "Teclado Mecanico Nisuta 60% White",
+    precio: 35000,
+    type: "teclado",
+    img: "IMG/teclados/teclado-nisuta.png",
+  },
+
+  {
+    id: 27,
+    nombre: "Mouse Red-Dragon Griffin",
+    precio: 15000,
+    type: "mouse",
+    img: "IMG/mouse/mouse-GRIFFIN-B.png",
+  },
+
+  {
+    id: 28,
+    nombre: "Mouse Red-Dragon RGB PowerLine",
+    precio: 20000,
+    type: "mouse",
+    img: "IMG/mouse/mouse-reddragon2.png",
+  },
+
+  {
+    id: 29,
+    nombre: "Mouse Red-Dragon Carbon",
+    precio: 10000,
+    type: "mouse",
+    img: "IMG/mouse/mouse-redragon.png",
+  },
+
+  {
+    id: 30,
+    nombre: "Mouse Red-Dragon Mammoth",
+    precio: 30000,
+    type: "mouse",
+    img: "IMG/mouse/Redragon-M801-Mammoth.png",
+  },
+];
+
+productos.forEach((producto) => {
+  producto.cantidad = 1;
+  producto.defaultType = "all";
+});
