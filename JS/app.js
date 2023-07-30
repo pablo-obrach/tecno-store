@@ -14,29 +14,29 @@ const coolers = document.getElementById("coolers");
 const teclados = document.getElementById("teclados");
 const mouse = document.getElementById("mouse");
 
-//creo el carrito de compras como un array vacio
+//*creo el carrito de compras como un array vacio
 let carrito = [];
-todoLosProductos();
-//le aplico el metodo forEach al array productos(product.js)
+
+//*le aplico el metodo forEach al array productos(product.js)
 function todoLosProductos() {
-  // shopContent.innerHTML = "";
   productos.forEach((product) => {
     let content = document.createElement("div");
     content.className = "card";
     content.innerHTML = `
-  <img src="${product.img}">
-  <h3>${product.nombre}</h3>
-  <p class= "precio">$${product.precio}</p>
-  `;
-    //le agrego con el metodo append el content de los productos
+    <img src="${product.img}">
+    <h3>${product.nombre}</h3>
+    <p class= "precio">$${product.precio}</p>
+    `;
+
+    //*le agrego con el metodo append el content de los productos
     shopContent.append(content);
 
-    //creo la variable para el boton y lo llamo
+    //*creo la variable para el boton y lo llamo
     let btnComprar = document.createElement("button");
     btnComprar.className = "btn-comprar";
     btnComprar.innerText = "Comprar";
 
-    //Envio el boton a content
+    //*Envio el boton a content
     content.append(btnComprar);
 
     btnComprar.addEventListener("click", () => {
@@ -63,6 +63,8 @@ function todoLosProductos() {
     });
   });
 }
+
+todoLosProductos();
 
 //*Metodos para filtrar productos
 
@@ -102,9 +104,9 @@ filterContainer.addEventListener("click", (e) => {
 
 function filtrarProductos(type) {
   shopContent.innerHTML = "";
-  const laptopsType = productos.filter((product) => product.type === type);
+  const productType = productos.filter((product) => product.type === type);
 
-  laptopsType.forEach((product) => {
+  productType.forEach((product) => {
     let content = document.createElement("div");
     content.className = "card";
     content.innerHTML = `
