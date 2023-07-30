@@ -3,6 +3,8 @@ const shopContent = document.getElementById("shop-content");
 const verCarrito = document.getElementById("cart");
 const modalContainer = document.getElementById("modal-container");
 const cantidadCarrito = document.getElementById("cantidadCarrito");
+//*variables para filtrar productos
+const filterContainer = document.getElementById("filterContainer");
 const todos = document.getElementById("todos");
 const laptops = document.getElementById("laptops");
 const torres = document.getElementById("torres");
@@ -17,7 +19,7 @@ let carrito = [];
 todoLosProductos();
 //le aplico el metodo forEach al array productos(product.js)
 function todoLosProductos() {
-  shopContent.innerHTML = "";
+  // shopContent.innerHTML = "";
   productos.forEach((product) => {
     let content = document.createElement("div");
     content.className = "card";
@@ -64,34 +66,38 @@ function todoLosProductos() {
 
 //*Metodos para filtrar productos
 
-todos.addEventListener("click", todoLosProductos);
+filterContainer.addEventListener("click", (e) => {
+  if (e.target.matches("li")) {
+    switch (e.target) {
+      case todos:
+        shopContent.innerHTML = "";
+        todoLosProductos();
+        break;
+      case laptops:
+        filtrarProductos("laptop");
+        break;
+      case torres:
+        filtrarProductos("torre");
+        break;
+      case monitores:
+        filtrarProductos("monitor");
+        break;
+      case procesadores:
+        filtrarProductos("procesador");
+        break;
+      case coolers:
+        filtrarProductos("cooler");
+        break;
 
-laptops.addEventListener("click", () => {
-  filtrarProductos("laptop");
-});
+      case teclados:
+        filtrarProductos("teclado");
+        break;
 
-torres.addEventListener("click", () => {
-  filtrarProductos("torre");
-});
-
-monitores.addEventListener("click", () => {
-  filtrarProductos("monitor");
-});
-
-procesadores.addEventListener("click", () => {
-  filtrarProductos("procesador");
-});
-
-coolers.addEventListener("click", () => {
-  filtrarProductos("cooler");
-});
-
-teclados.addEventListener("click", () => {
-  filtrarProductos("teclado");
-});
-
-mouse.addEventListener("click", () => {
-  filtrarProductos("mouse");
+      case mouse:
+        filtrarProductos("mouse");
+        break;
+    }
+  }
 });
 
 function filtrarProductos(type) {
