@@ -106,6 +106,7 @@ const carritoCounter = () => {
 const vaciar = () => {
   carrito = [];
   carritoCounter();
+  saveLocal();
   pintarCarrito();
 };
 
