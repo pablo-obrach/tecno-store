@@ -15,7 +15,7 @@ const teclados = document.getElementById("teclados");
 const mouse = document.getElementById("mouse");
 
 //*creo el carrito de compras como un array vacio
-let carrito = [];
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 //*le aplico el metodo forEach al array productos(product.js)
 function todoLosProductos() {
@@ -60,6 +60,7 @@ function todoLosProductos() {
         });
       }
       carritoCounter();
+      saveLocal();
     });
   });
 }
@@ -73,30 +74,46 @@ filterContainer.addEventListener("click", (e) => {
     switch (e.target) {
       case todos:
         shopContent.innerHTML = "";
-        todoLosProductos();
+        todoLosProductos("all");
+        carritoCounter();
+        saveLocal();
         break;
       case laptops:
         filtrarProductos("laptop");
+        carritoCounter();
+        saveLocal();
         break;
       case torres:
         filtrarProductos("torre");
+        carritoCounter();
+        saveLocal();
         break;
       case monitores:
         filtrarProductos("monitor");
+        carritoCounter();
+        saveLocal();
         break;
       case procesadores:
         filtrarProductos("procesador");
+        carritoCounter();
+        saveLocal();
         break;
       case coolers:
         filtrarProductos("cooler");
+        carritoCounter();
+        saveLocal();
         break;
 
       case teclados:
         filtrarProductos("teclado");
+        carritoCounter();
+        saveLocal();
         break;
 
       case mouse:
         filtrarProductos("mouse");
+        carritoCounter();
+        saveLocal();
         break;
     }
   }
@@ -144,8 +161,15 @@ function filtrarProductos(type) {
           precio: product.precio,
           cantidad: product.cantidad,
         });
+        carritoCounter();
+        saveLocal();
       }
-      carritoCounter();
     });
   });
 }
+
+//*Local storage Set Item
+const saveLocal = () => {
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+};
+//*Local storage Get Item

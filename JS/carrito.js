@@ -45,6 +45,7 @@ const pintarCarrito = () => {
         product.cantidad--;
       }
       pintarCarrito();
+      saveLocal();
     });
 
     let sumar = carritoContent.querySelector(".sumar");
@@ -52,6 +53,7 @@ const pintarCarrito = () => {
     sumar.addEventListener("click", () => {
       product.cantidad++;
       pintarCarrito();
+      saveLocal();
     });
     let eliminar = carritoContent.querySelector(".delete__product");
 
@@ -89,12 +91,16 @@ const eliminarProducto = (id) => {
     return carritoId !== encontrarID;
   });
   carritoCounter();
+  saveLocal();
   pintarCarrito();
 };
 
 const carritoCounter = () => {
   cantidadCarrito.style.display = "block";
-  cantidadCarrito.innerText = carrito.length;
+  const carritoLength = carrito.length;
+
+  localStorage.setItem("carritoLength", JSON.stringify(carritoLength));
+  cantidadCarrito.innerText = JSON.parse(localStorage.getItem("carritoLength"));
 };
 
 const vaciar = () => {
@@ -102,3 +108,5 @@ const vaciar = () => {
   carritoCounter();
   pintarCarrito();
 };
+
+carritoCounter();
