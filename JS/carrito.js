@@ -1,6 +1,9 @@
-//*TODO:eliminar productos del carrito 👌
-//*TODO:manejar cantidades y totales 👌
-//*TODO: cantidad de productos en el carrito
+//TODO: eliminar productos del carrito por unidad y vaciar carrito 👌
+//TODO: manejar cantidades y totales 👌
+//TODO: cantidad de productos en el carrito 👌
+//TODOa: agregar boton de finalizar compra ,
+//TODOb: que te dirija a una pagina con formulario para finalizar la compra.
+//TODOc: crear modal de compra finalizada.
 
 const pintarCarrito = () => {
   modalContainer.innerHTML = "";

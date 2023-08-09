@@ -14,10 +14,12 @@ const coolers = document.getElementById("coolers");
 const teclados = document.getElementById("teclados");
 const mouse = document.getElementById("mouse");
 
-//*creo el carrito de compras como un array vacio
+//*CARRITO
+
+//*Al iniciar toma el local storage o el carrito vacio
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-//*le aplico el metodo forEach al array productos(product.js)
+//*Funcion para mostrar todos los productos dinamicamente
 function todoLosProductos() {
   productos.forEach((product) => {
     let content = document.createElement("div");
@@ -28,7 +30,7 @@ function todoLosProductos() {
     <p class= "precio">$${product.precio}</p>
     `;
 
-    //*le agrego con el metodo append el content de los productos
+    //*Agrego el content de los productos al div principal
     shopContent.append(content);
 
     //*creo la variable para el boton y lo llamo
@@ -36,9 +38,9 @@ function todoLosProductos() {
     btnComprar.className = "btn-comprar";
     btnComprar.innerText = "Comprar";
 
-    //*Envio el boton a content
     content.append(btnComprar);
 
+    //*Sistema para agregar productos por cantidad
     btnComprar.addEventListener("click", () => {
       const repetido = carrito.some(
         (repeatProduct) => repeatProduct.id === product.id
@@ -68,7 +70,7 @@ function todoLosProductos() {
 todoLosProductos();
 
 //*Metodos para filtrar productos
-
+//*Utilizo el bubbling del (e) para el container, asi todos sus hijos lo reciben.
 filterContainer.addEventListener("click", (e) => {
   if (e.target.matches("li")) {
     switch (e.target) {
@@ -119,6 +121,8 @@ filterContainer.addEventListener("click", (e) => {
   }
 });
 
+//*Funcion para filtrar los productos por (type)
+
 function filtrarProductos(type) {
   shopContent.innerHTML = "";
   const productType = productos.filter((product) => product.type === type);
@@ -131,15 +135,13 @@ function filtrarProductos(type) {
   <h3>${product.nombre}</h3>
   <p class= "precio">$${product.precio}</p>
   `;
-    //le agrego con el metodo append el content de los productos
+
     shopContent.append(content);
 
-    //creo la variable para el boton y lo llamo
     let btnComprar = document.createElement("button");
     btnComprar.className = "btn-comprar";
     btnComprar.innerText = "Comprar";
 
-    //Envio el boton a content
     content.append(btnComprar);
 
     btnComprar.addEventListener("click", () => {
@@ -172,4 +174,3 @@ function filtrarProductos(type) {
 const saveLocal = () => {
   localStorage.setItem("carrito", JSON.stringify(carrito));
 };
-//*Local storage Get Item
