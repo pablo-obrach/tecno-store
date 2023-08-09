@@ -133,28 +133,49 @@ body {
 }
 
 .shop__content__container .filter__container__box {
-  text-align: center;
-  border: 2px solid #fff;
-  border-radius: 5px;
-  padding: 1rem;
+  background: grey;
+  border-radius: 0px 5px 5px 0px;
+  padding: 1.5rem;
   margin-top: 2rem;
   position: sticky;
   top: 20%;
 }
 
 .filter__container__ul__title {
-  text-decoration: underline;
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
   margin-bottom: 1em;
+  text-align: center;
 }
 
 .filter__container__ul__filters {
   list-style: none;
   margin-bottom: 0.5em;
   cursor: pointer;
+  display: inline-block;
+  position: relative;
 }
 
 .filter__container__ul__filters:hover {
-  text-decoration: underline;
+  color: rgba(211, 211, 211, 0.686);
+}
+
+.filter__container__ul__filters::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(211, 211, 211, 0.686);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 600ms ease-out;
+}
+.filter__container__ul__filters:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  color: rgba(211, 211, 211, 0.686);
 }
 
 .card {
@@ -199,20 +220,17 @@ body {
 }
 
 .top__arrow {
-  position: sticky;
-  bottom: 5%;
-  left: 93%;
-  align-self: self-end;
   font-size: 3rem;
   text-align: center;
   background: rgba(254, 254, 254, 0.2);
   width: 58px;
   border: 1px solid #fff;
   border-radius: 50%;
-  margin-right: 0;
+  margin: 0 auto;
 }
 
 .top__arrow > a {
+  justify-self: center;
   text-decoration: none;
   color: #fff;
 }
@@ -244,7 +262,6 @@ body {
   gap: 1rem;
   border-radius: 10px;
   padding: 1rem;
-  /* margin-right: 0.5rem; */
   position: fixed;
   overflow: auto;
   z-index: 9;
