@@ -88,7 +88,6 @@ verCarrito.addEventListener("click", pintarCarrito);
 
 const eliminarProducto = (id) => {
   const encontrarID = carrito.find((elemento) => elemento.id === id);
-  console.log(encontrarID);
 
   carrito = carrito.filter((carritoId) => {
     return carritoId !== encontrarID;
