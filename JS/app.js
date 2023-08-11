@@ -5,14 +5,7 @@ const modalContainer = document.getElementById("modal-container");
 const cantidadCarrito = document.getElementById("cantidadCarrito");
 //*variables para filtrar productos
 const filterContainer = document.getElementById("filterContainer");
-const todos = document.getElementById("todos");
-const laptops = document.getElementById("laptops");
-const torres = document.getElementById("torres");
-const monitores = document.getElementById("monitores");
-const procesadores = document.getElementById("procesadores");
-const coolers = document.getElementById("coolers");
-const teclados = document.getElementById("teclados");
-const mouse = document.getElementById("mouse");
+const filtros = document.getElementsByName("filtro");
 
 //*creo el carrito de compras como un array vacio
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
