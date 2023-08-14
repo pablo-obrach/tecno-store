@@ -6,14 +6,23 @@ const cantidadCarrito = document.getElementById("cantidadCarrito");
 //*variables para filtrar productos
 const filterContainer = document.getElementById("filterContainer");
 const filtros = document.getElementsByName("filtro");
+let productos = [];
 
 //*CARRITO
 
 //*Al iniciar toma el local storage o el carrito vacio
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
+//*Implementando fetch con archivo Json local
+fetch("./js/products.json")
+  .then((response) => response.json())
+  .then((data) => {
+    productos = data;
+    todoLosProductos(data);
+  });
+
 //*Funcion para mostrar todos los productos dinamicamente
-function todoLosProductos() {
+function todoLosProductos(productos) {
   productos.forEach((product) => {
     let content = document.createElement("div");
     content.className = "card";
@@ -60,7 +69,7 @@ function todoLosProductos() {
   });
 }
 
-todoLosProductos();
+// todoLosProductos();
 
 //*Metodos para filtrar productos
 //*Utilizo el bubbling del (e) para el container, asi todos sus hijos lo reciben.
@@ -69,7 +78,7 @@ filterContainer.addEventListener("click", (e) => {
     switch (e.target) {
       case todos:
         shopContent.innerHTML = "";
-        todoLosProductos("all");
+        todoLosProductos(productos);
         carritoCounter();
         saveLocal();
         break;
