@@ -1,5 +1,5 @@
 [
-  {"id":1,"nombre":"Asus HD","precio":15000,"type":"laptop","defaultType":"all","cantidad":1,"img": "IMG/laptops/Asus-Laptop.png"},
+  {"id":1,"nombre":"Asus HD","precio":150000,"type":"laptop","defaultType":"all","cantidad":1,"img": "IMG/laptops/Asus-Laptop.png"},
   {"id":2,"nombre":"Asus PRO","precio":250000,"type":"laptop","defaultType":"all","cantidad":1,"img": "IMG/laptops/Asus-Laptop2.png"},
   {"id":3,"nombre":"Asus Gaming","precio":300000,"type":"laptop","defaultType":"all","cantidad":1,"img": "IMG/laptops/asus-laptop-gaming.png"},
   {"id":4,"nombre":"Lenovo ThinkPad s450","precio":200000,"type":"laptop","defaultType":"all","cantidad":1,"img": "IMG/laptops/Lenovo-Laptop.png"},

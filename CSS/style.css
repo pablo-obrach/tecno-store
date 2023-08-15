@@ -44,6 +44,10 @@ body {
   margin-left: 0.5rem;
 }
 
+.header__title {
+  font-size: 1.5rem;
+}
+
 .modal__container__products .header__title {
   font-size: 2rem;
   font-weight: 900;
@@ -62,11 +66,12 @@ body {
 .sumar,
 .restar {
   cursor: pointer;
-  border: 1px solid #000;
+  border: 1px solid lightseagreen;
   width: 20px;
   height: 20px;
-  border-radius: 50%;
   text-align: center;
+  border-radius: 5px;
+  color: rgb(24, 141, 135);
 }
 
 .nav__list {
@@ -78,10 +83,30 @@ body {
 .nav__list__links {
   text-decoration: none;
   color: #fff;
+  margin-top: 0.2rem;
 }
 
 .nav__list__link {
   list-style: none;
+  position: relative;
+}
+
+.nav__list__link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(211, 211, 211, 0.686);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 600ms ease-out;
+}
+.nav__list__link:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  color: rgba(211, 211, 211, 0.686);
 }
 
 .cart__container {
@@ -156,10 +181,6 @@ body {
   cursor: pointer;
   display: inline-block;
   position: relative;
-}
-
-.filter__container__ul__filters:hover {
-  color: rgba(211, 211, 211, 0.686);
 }
 
 .filter__container__ul__filters::after {
@@ -243,10 +264,12 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 100%;
+  width: 65%;
   background: rgba(0, 0, 0, 0.2);
-  padding: 1rem;
+  padding: 0.5rem 0px;
   border-radius: 5px;
+  margin: 0px 4rem;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .modal__container__products-disable {
@@ -264,7 +287,7 @@ body {
   color: #000;
   gap: 1rem;
   border-radius: 10px;
-  padding: 1rem;
+  padding: 1rem 0;
   position: fixed;
   overflow: auto;
   z-index: 9;
@@ -289,12 +312,14 @@ body {
   gap: 0.5rem;
 }
 
+.modal__header__title {
+  font-weight: 400;
+}
+
 .modal__header__btn {
   cursor: pointer;
-  border: 1px solid #000;
-  border-radius: 2px;
-  padding: 0.3rem;
-  background: rgba(0, 0, 0, 0.2);
+  font-size: 1.5rem;
+  color: crimson;
 }
 
 .modal__content > img {
@@ -307,25 +332,43 @@ body {
 }
 
 .total__compra {
-  font-size: 25px;
-  padding: 20px;
+  font-size: 1.2em;
   text-align: center;
-  padding-top: 20px;
   background: rgba(0, 0, 0, 0.2);
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 5px;
+  margin-left: 3rem;
 }
 
 .btn__vaciar__carrito {
-  padding: 1rem;
-  border: 1px solid red;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 10px;
+  outline: none;
   color: red;
   background: transparent;
   transition: background 400ms ease;
+  margin-right: 3rem;
 }
 
 .btn__vaciar__carrito:hover {
   background: rgba(255, 0, 0, 0.347);
+}
+
+.btn__pagar__carrito {
+  width: 65%;
+  padding: 0.5rem;
+  border: 1px solid rgb(10, 184, 10);
+  border-radius: 5px;
+  outline: none;
+  background: rgba(10, 184, 10, 0.5);
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+  font-weight: 600;
+}
+
+.btn__pagar__carrito:hover {
+  background: rgba(10, 184, 10, 0.8);
+  color: #fff;
 }
 
 @media (max-width: 520px) {

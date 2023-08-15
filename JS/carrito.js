@@ -32,11 +32,11 @@ const pintarCarrito = () => {
     carritoContent.innerHTML = `
     <img src="${product.img}">
     <h3>${product.nombre}</h3>
-    <p>Precio: $${product.precio}</p>
+    <p>Precio:<b>$${product.precio}</b></p>
     <span class="restar"> - </span>
     <p>Cantidad: ${product.cantidad}</p>
     <span class="sumar"> + </span>
-    <p>Total: ${product.cantidad * product.precio}</P>
+    <p>Total por cant: ${product.cantidad * product.precio}</P>
     <span class="delete__product">❌</span>
     `;
     modalContainer.append(carritoContent);
@@ -82,6 +82,16 @@ const pintarCarrito = () => {
   vaciarCarrito.addEventListener("click", () => {
     vaciar();
   });
+
+  const pagarCarrito = document.createElement("button");
+  pagarCarrito.className = "btn__pagar__carrito";
+  pagarCarrito.innerText = "Pagar tu Compra 🛒";
+
+  modalContainer.append(pagarCarrito);
+
+  // pagarCarrito.addEventListener("click",{
+
+  // })
 };
 
 verCarrito.addEventListener("click", pintarCarrito);
