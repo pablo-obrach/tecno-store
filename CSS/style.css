@@ -159,12 +159,13 @@ body {
 }
 
 .shop__content__container .filter__container__box {
-  background: grey;
   border-radius: 0px 5px 5px 0px;
+  border: 3px solid #fff;
   padding: 1.5rem;
   margin-top: 2rem;
   position: sticky;
-  top: 20%;
+  top: 15%;
+  z-index: 8;
   width: 9rem;
 }
 
@@ -265,8 +266,10 @@ body {
   justify-content: space-around;
   align-items: center;
   width: 65%;
-  background: rgba(0, 0, 0, 0.2);
+  background: hsl(214, 100%, 58%);
+  color: #fff;
   padding: 0.5rem 0px;
+  border: 1px solid hsl(214, 97%, 46%);
   border-radius: 5px;
   margin: 0px 4rem;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
@@ -290,7 +293,7 @@ body {
   padding: 1rem 0;
   position: fixed;
   overflow: auto;
-  z-index: 9;
+  z-index: 10;
   top: 17%;
   right: 0;
   scrollbar-color: none;
@@ -334,7 +337,8 @@ body {
 .total__compra {
   font-size: 1.2em;
   text-align: center;
-  background: rgba(0, 0, 0, 0.2);
+  background: hsl(214, 92%, 69%);
+  color: #fff;
   padding: 0.5rem;
   border-radius: 5px;
   margin-left: 3rem;
@@ -392,7 +396,7 @@ body {
 
   .modal__container__products {
     width: 100%;
-    max-height: 40vh;
+    max-height: 60vh;
   }
 
   .modal__container__products .modal__header {
@@ -402,6 +406,7 @@ body {
   .modal__container__products .total__compra {
     font-size: 1rem;
     padding: 0.5rem;
+    margin-left: 2rem;
   }
 
   .modal__content {
@@ -424,9 +429,20 @@ body {
     align-items: center;
     justify-content: center;
   }
+
+  .filter__container__ul__filters {
+    position: static;
+  }
+
+  .filter__container__ul__filters::after {
+    position: static;
+  }
+
   .shop__content__container .filter__container__box {
     width: 100%;
-    z-index: -1;
+    position: static;
+    top: 0;
+    border-radius: 0px 0px 0px 0px;
   }
 
   .top__arrow {

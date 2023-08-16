@@ -85,7 +85,7 @@ const pintarCarrito = () => {
 
   const pagarCarrito = document.createElement("button");
   pagarCarrito.className = "btn__pagar__carrito";
-  pagarCarrito.innerText = "Pagar tu Compra 🛒";
+  pagarCarrito.innerText = "Pagar tu Compra";
 
   modalContainer.append(pagarCarrito);
 
