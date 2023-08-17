@@ -3,23 +3,32 @@ const shopContent = document.getElementById("shop-content");
 const verCarrito = document.getElementById("cart");
 const modalContainer = document.getElementById("modal-container");
 const cantidadCarrito = document.getElementById("cantidadCarrito");
+
 //*variables para filtrar productos
 const filterContainer = document.getElementById("filterContainer");
 const filtros = document.getElementsByName("filtro");
 let productos = [];
 
-//*CARRITO
+document.addEventListener("DOMContentLoaded", () => {
+  fetchData();
+});
 
+//*CARRITO
 //*Al iniciar toma el local storage o el carrito vacio
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 //*Implementando fetch con archivo Json local
-fetch("./js/products.json")
-  .then((response) => response.json())
-  .then((data) => {
+
+const fetchData = async () => {
+  try {
+    const res = await fetch("./js/products.json");
+    const data = await res.json();
     productos = data;
     todoLosProductos(data);
-  });
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 //*Funcion para mostrar todos los productos dinamicamente
 function todoLosProductos(productos) {
