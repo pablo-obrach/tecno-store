@@ -294,7 +294,7 @@ body {
   position: fixed;
   overflow: auto;
   z-index: 10;
-  top: 17%;
+  top: 20%;
   right: 0;
   scrollbar-color: none;
 }
@@ -373,6 +373,10 @@ body {
 .btn__pagar__carrito:hover {
   background: rgba(10, 184, 10, 0.8);
   color: #fff;
+}
+
+.colored-toast.swal2-icon-success {
+  background-color: #a5dc86 !important;
 }
 
 @media (max-width: 520px) {

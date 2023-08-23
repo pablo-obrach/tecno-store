@@ -74,11 +74,10 @@ function todoLosProductos(productos) {
       }
       carritoCounter();
       saveLocal();
+      toastAction();
     });
   });
 }
-
-// todoLosProductos();
 
 //*Metodos para filtrar productos
 //*Utilizo el bubbling del (e) para el container, asi todos sus hijos lo reciben.
@@ -176,6 +175,7 @@ function filtrarProductos(type) {
         });
         carritoCounter();
         saveLocal();
+        toastAction();
       }
     });
   });
@@ -184,4 +184,22 @@ function filtrarProductos(type) {
 //*Local storage Set Item
 const saveLocal = () => {
   localStorage.setItem("carrito", JSON.stringify(carrito));
+};
+
+const toastAction = async () => {
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "bottom-right",
+    iconColor: "white",
+    customClass: {
+      popup: "colored-toast",
+    },
+    showConfirmButton: false,
+    timer: 2000,
+    timerProgressBar: true,
+  });
+  await Toast.fire({
+    icon: "success",
+    title: "Se ha añadido un producto al carrito",
+  });
 };
