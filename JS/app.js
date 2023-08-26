@@ -80,7 +80,7 @@ function todoLosProductos(productos) {
 }
 
 //*Metodos para filtrar productos
-//*Utilizo el bubbling del (e) para el container, asi todos sus hijos lo reciben.
+//*Utilizo el bubbling del (event) para el container, asi todos sus hijos lo reciben.
 let productoFiltradoDefault = "";
 
 filterContainer.addEventListener("click", (e) => {
