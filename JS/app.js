@@ -81,52 +81,26 @@ function todoLosProductos(productos) {
 
 //*Metodos para filtrar productos
 //*Utilizo el bubbling del (e) para el container, asi todos sus hijos lo reciben.
+let productoFiltradoDefault = "";
+
 filterContainer.addEventListener("click", (e) => {
   if (e.target.matches("li")) {
-    switch (e.target) {
-      case todos:
+    let productoFiltrado = e.target.id;
+    console.log(productoFiltrado);
+
+    if (productoFiltrado !== productoFiltradoDefault) {
+      productoFiltradoDefault = productoFiltrado;
+      console.log(productoFiltradoDefault);
+      if (productoFiltrado === "todos") {
         shopContent.innerHTML = "";
         todoLosProductos(productos);
         carritoCounter();
         saveLocal();
-        break;
-      case laptops:
-        filtrarProductos("laptop");
+      } else {
+        filtrarProductos(productoFiltrado);
         carritoCounter();
         saveLocal();
-        break;
-      case torres:
-        filtrarProductos("torre");
-        carritoCounter();
-        saveLocal();
-        break;
-      case monitores:
-        filtrarProductos("monitor");
-        carritoCounter();
-        saveLocal();
-        break;
-      case procesadores:
-        filtrarProductos("procesador");
-        carritoCounter();
-        saveLocal();
-        break;
-      case coolers:
-        filtrarProductos("cooler");
-        carritoCounter();
-        saveLocal();
-        break;
-
-      case teclados:
-        filtrarProductos("teclado");
-        carritoCounter();
-        saveLocal();
-        break;
-
-      case mouse:
-        filtrarProductos("mouse");
-        carritoCounter();
-        saveLocal();
-        break;
+      }
     }
   }
 });
@@ -136,49 +110,7 @@ filterContainer.addEventListener("click", (e) => {
 function filtrarProductos(type) {
   shopContent.innerHTML = "";
   const productType = productos.filter((product) => product.type === type);
-
-  productType.forEach((product) => {
-    let content = document.createElement("div");
-    content.className = "card";
-    content.innerHTML = `
-  <img src="${product.img}">
-  <h3>${product.nombre}</h3>
-  <p class= "precio">$${product.precio}</p>
-  `;
-
-    shopContent.append(content);
-
-    let btnComprar = document.createElement("button");
-    btnComprar.className = "btn-comprar";
-    btnComprar.innerText = "Comprar";
-
-    content.append(btnComprar);
-
-    btnComprar.addEventListener("click", () => {
-      const repetido = carrito.some(
-        (repeatProduct) => repeatProduct.id === product.id
-      );
-
-      if (repetido) {
-        carrito.map((prod) => {
-          if (prod.id === product.id) {
-            prod.cantidad++;
-          }
-        });
-      } else {
-        carrito.push({
-          id: product.id,
-          img: product.img,
-          nombre: product.nombre,
-          precio: product.precio,
-          cantidad: product.cantidad,
-        });
-        carritoCounter();
-        saveLocal();
-        toastAction();
-      }
-    });
-  });
+  todoLosProductos(productType);
 }
 
 //*Local storage Set Item
