@@ -86,11 +86,10 @@ let productoFiltradoDefault = "";
 filterContainer.addEventListener("click", (e) => {
   if (e.target.matches("li")) {
     let productoFiltrado = e.target.id;
-    console.log(productoFiltrado);
 
     if (productoFiltrado !== productoFiltradoDefault) {
       productoFiltradoDefault = productoFiltrado;
-      console.log(productoFiltradoDefault);
+
       if (productoFiltrado === "todos") {
         shopContent.innerHTML = "";
         todoLosProductos(productos);
